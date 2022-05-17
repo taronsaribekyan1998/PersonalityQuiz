@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IntroViewController.swift
 //  PersonalityQuiz
 //
 //  Created by Taron on 17.05.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IntroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
