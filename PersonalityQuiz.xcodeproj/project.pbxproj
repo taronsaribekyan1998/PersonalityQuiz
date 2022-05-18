@@ -15,6 +15,8 @@
 		8092C15D2833A3BB004EFE34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8092C15B2833A3BB004EFE34 /* LaunchScreen.storyboard */; };
 		8092C1652833B4EC004EFE34 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092C1642833B4EC004EFE34 /* QuestionsViewController.swift */; };
 		8092C1672833B4F8004EFE34 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092C1662833B4F8004EFE34 /* ResultViewController.swift */; };
+		8092C16B2833C3DC004EFE34 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092C16A2833C3DC004EFE34 /* Question.swift */; };
+		8092C16D2833C3FC004EFE34 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092C16C2833C3FC004EFE34 /* Answer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8092C15E2833A3BB004EFE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8092C1642833B4EC004EFE34 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		8092C1662833B4F8004EFE34 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		8092C16A2833C3DC004EFE34 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8092C16C2833C3FC004EFE34 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,35 @@
 		8092C14F2833A3BB004EFE34 /* PersonalityQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8092C1692833C3B1004EFE34 /* Models */,
+				8092C1682833C38D004EFE34 /* View Controllers */,
 				8092C1502833A3BB004EFE34 /* AppDelegate.swift */,
 				8092C1522833A3BB004EFE34 /* SceneDelegate.swift */,
-				8092C1542833A3BB004EFE34 /* IntroViewController.swift */,
-				8092C1642833B4EC004EFE34 /* QuestionsViewController.swift */,
-				8092C1662833B4F8004EFE34 /* ResultViewController.swift */,
 				8092C1562833A3BB004EFE34 /* Main.storyboard */,
 				8092C1592833A3BB004EFE34 /* Assets.xcassets */,
 				8092C15B2833A3BB004EFE34 /* LaunchScreen.storyboard */,
 				8092C15E2833A3BB004EFE34 /* Info.plist */,
 			);
 			path = PersonalityQuiz;
+			sourceTree = "<group>";
+		};
+		8092C1682833C38D004EFE34 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8092C1542833A3BB004EFE34 /* IntroViewController.swift */,
+				8092C1642833B4EC004EFE34 /* QuestionsViewController.swift */,
+				8092C1662833B4F8004EFE34 /* ResultViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8092C1692833C3B1004EFE34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8092C16A2833C3DC004EFE34 /* Question.swift */,
+				8092C16C2833C3FC004EFE34 /* Answer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +169,8 @@
 				8092C1672833B4F8004EFE34 /* ResultViewController.swift in Sources */,
 				8092C1552833A3BB004EFE34 /* IntroViewController.swift in Sources */,
 				8092C1512833A3BB004EFE34 /* AppDelegate.swift in Sources */,
+				8092C16D2833C3FC004EFE34 /* Answer.swift in Sources */,
+				8092C16B2833C3DC004EFE34 /* Question.swift in Sources */,
 				8092C1652833B4EC004EFE34 /* QuestionsViewController.swift in Sources */,
 				8092C1532833A3BB004EFE34 /* SceneDelegate.swift in Sources */,
 			);
