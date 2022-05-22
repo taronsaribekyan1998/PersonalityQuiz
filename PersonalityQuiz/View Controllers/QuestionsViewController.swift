@@ -35,7 +35,7 @@ final class QuestionsViewController: UIViewController {
     
     @IBOutlet private var progressView: UIProgressView!
     
-    private var questions: [Question] = [
+    private let questions: [Question] = [
         Question(
             text: "Which food do you like the most?",
             type: .single,

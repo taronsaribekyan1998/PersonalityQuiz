@@ -8,9 +8,9 @@
 import Foundation
 
 struct Question {
-    var text: String
-    var type: ResponseType
-    var answers: [Answer]
+    let text: String
+    let type: ResponseType
+    let answers: [Answer]
 }
 
 enum ResponseType {

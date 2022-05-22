@@ -8,8 +8,8 @@
 import Foundation
 
 struct Answer {
-    var text: String
-    var type: AnimalType
+    let text: String
+    let type: AnimalType
 }
 
 enum AnimalType: Character {

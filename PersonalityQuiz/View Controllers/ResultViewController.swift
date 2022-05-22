@@ -12,7 +12,7 @@ final class ResultViewController: UIViewController {
     @IBOutlet private var resultAnswerLabel: UILabel!
     @IBOutlet private var resultDefinitionLabel: UILabel!
     
-    private var responses: [Answer]
+    private let responses: [Answer]
     
     init?(coder: NSCoder, responses: [Answer]) {
         self.responses = responses
