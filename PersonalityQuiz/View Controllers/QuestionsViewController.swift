@@ -7,35 +7,35 @@
 
 import UIKit
 
-class QuestionsViewController: UIViewController {
+final class QuestionsViewController: UIViewController {
     
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet private var questionLabel: UILabel!
     
-    @IBOutlet var singleStackView: UIStackView!
-    @IBOutlet var singleButton1: UIButton!
-    @IBOutlet var singleButton2: UIButton!
-    @IBOutlet var singleButton3: UIButton!
-    @IBOutlet var singleButton4: UIButton!
+    @IBOutlet private var singleStackView: UIStackView!
+    @IBOutlet private var singleButton1: UIButton!
+    @IBOutlet private var singleButton2: UIButton!
+    @IBOutlet private var singleButton3: UIButton!
+    @IBOutlet private var singleButton4: UIButton!
     
-    @IBOutlet var multipleStackView: UIStackView!
-    @IBOutlet var multiLabel1: UILabel!
-    @IBOutlet var multiLabel2: UILabel!
-    @IBOutlet var multiLabel3: UILabel!
-    @IBOutlet var multiLabel4: UILabel!
-    @IBOutlet var multiSwitch1: UISwitch!
-    @IBOutlet var multiSwitch2: UISwitch!
-    @IBOutlet var multiSwitch3: UISwitch!
-    @IBOutlet var multiSwitch4: UISwitch!
+    @IBOutlet private var multipleStackView: UIStackView!
+    @IBOutlet private var multiLabel1: UILabel!
+    @IBOutlet private var multiLabel2: UILabel!
+    @IBOutlet private var multiLabel3: UILabel!
+    @IBOutlet private var multiLabel4: UILabel!
+    @IBOutlet private var multiSwitch1: UISwitch!
+    @IBOutlet private var multiSwitch2: UISwitch!
+    @IBOutlet private var multiSwitch3: UISwitch!
+    @IBOutlet private var multiSwitch4: UISwitch!
     
     
-    @IBOutlet var rangedStackView: UIStackView!
-    @IBOutlet var rangedLabel1: UILabel!
-    @IBOutlet var rangedLabel2: UILabel!
-    @IBOutlet var rangedSlider: UISlider!
+    @IBOutlet private var rangedStackView: UIStackView!
+    @IBOutlet private var rangedLabel1: UILabel!
+    @IBOutlet private var rangedLabel2: UILabel!
+    @IBOutlet private var rangedSlider: UISlider!
     
-    @IBOutlet var progressView: UIProgressView!
+    @IBOutlet private var progressView: UIProgressView!
     
-    var questions: [Question] = [
+    private var questions: [Question] = [
         Question(
             text: "Which food do you like the most?",
             type: .single,
@@ -68,8 +68,8 @@ class QuestionsViewController: UIViewController {
         )
     ]
     
-    var questionIndex = 0
-    var chosenAnswers: [Answer] = []
+    private var questionIndex = 0
+    private var chosenAnswers: [Answer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +79,7 @@ class QuestionsViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+    @IBAction private func singleAnswerButtonPressed(_ sender: UIButton) {
         let currentAnswers = questions[questionIndex].answers
         
         switch sender {
@@ -98,7 +98,7 @@ class QuestionsViewController: UIViewController {
         nextQuestion()
     }
     
-    @IBAction func multiplAnswerButtonPressed() {
+    @IBAction private func multiplAnswerButtonPressed() {
         let currentAnswers = questions[questionIndex].answers
         
         if multiSwitch1.isOn {
@@ -117,7 +117,7 @@ class QuestionsViewController: UIViewController {
         nextQuestion()
     }
     
-    @IBAction func rangedAnswerButtonPressed() {
+    @IBAction private func rangedAnswerButtonPressed() {
         let currentAnswers = questions[questionIndex].answers
         let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))
         chosenAnswers.append(currentAnswers[index])
@@ -125,13 +125,13 @@ class QuestionsViewController: UIViewController {
         nextQuestion()
     }
     
-    @IBSegueAction func showResult(_ coder: NSCoder) -> ResultViewController? {
+    @IBSegueAction private func showResult(_ coder: NSCoder) -> ResultViewController? {
         return ResultViewController(coder: coder, responses: chosenAnswers)
     }
     
     // MARK: Functions
     
-    func updateUI() {
+    private func updateUI() {
         singleStackView.isHidden = true
         multipleStackView.isHidden = true
         rangedStackView.isHidden = true
@@ -154,7 +154,7 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    func nextQuestion() {
+    private func nextQuestion() {
         questionIndex += 1
         
         if questionIndex < questions.count {
@@ -164,11 +164,11 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    func updateSingleStack(using answers: [Answer]) {
+    private func updateSingleStack(using answers: [Answer]) {
         singleStackView.isHidden = false
     }
     
-    func updateMultipleStack(using answers: [Answer]) {
+    private func updateMultipleStack(using answers: [Answer]) {
         multipleStackView.isHidden = false
         multiSwitch1.isOn = false
         multiSwitch2.isOn = false
@@ -180,7 +180,7 @@ class QuestionsViewController: UIViewController {
         multiLabel4.text = answers[3].text
     }
     
-    func updateRangedStack(using answers: [Answer]) {
+    private func updateRangedStack(using answers: [Answer]) {
         rangedStackView.isHidden = false
         rangedSlider.setValue(0.5, animated: false)
         rangedLabel1.text = answers.first?.text

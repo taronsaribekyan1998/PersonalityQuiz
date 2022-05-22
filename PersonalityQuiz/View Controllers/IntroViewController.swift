@@ -7,13 +7,13 @@
 
 import UIKit
 
-class IntroViewController: UIViewController {
+final class IntroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func unwindToIntro(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToIntro(segue: UIStoryboardSegue) {
     }
 }
 

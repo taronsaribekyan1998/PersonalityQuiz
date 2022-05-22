@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+final class ResultViewController: UIViewController {
     
-    @IBOutlet var resultAnswerLabel: UILabel!
-    @IBOutlet var resultDefinitionLabel: UILabel!
+    @IBOutlet private var resultAnswerLabel: UILabel!
+    @IBOutlet private var resultDefinitionLabel: UILabel!
     
-    var responses: [Answer]
+    private var responses: [Answer]
     
     init?(coder: NSCoder, responses: [Answer]) {
         self.responses = responses
@@ -30,7 +30,7 @@ class ResultViewController: UIViewController {
         calculatePersonalityResult()
     }
     
-    func calculatePersonalityResult() {
+    private func calculatePersonalityResult() {
         let frequencyOfAnswers = responses.reduce(into: [:]) { counts, answer in
             counts[answer.type, default: 0] += 1
         }
